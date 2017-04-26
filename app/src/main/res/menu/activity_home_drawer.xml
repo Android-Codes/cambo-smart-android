@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_past_ads"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Post Ads" />
+        <item
+            android:id="@+id/nav_my_ads"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="My Ads" />
+        <item
+            android:id="@+id/nav_save_ads"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Save Ads" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_set_map"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Set Map" />
+        <item
+            android:id="@+id/nav_change_password"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_language"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Language"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Setting" />
+    </group>
+</menu>

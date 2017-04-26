@@ -9,12 +9,23 @@
         android:roundIcon="@drawable/cambo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.PostAdsActivity" />
+        <activity android:name=".activities.MyAdsActivity" />
+        <activity android:name=".activities.SaveAdsActivity" />
+        <activity android:name=".activities.AccountActivity" />
+        <activity android:name=".activities.SetMapActivity" />
+        <activity android:name=".activities.ChangePasswordActivity" />
+        <activity android:name=".activities.LanguageActivity" />
+        <activity android:name=".activities.SettingActivity"></activity>
     </application>
 
 </manifest>
