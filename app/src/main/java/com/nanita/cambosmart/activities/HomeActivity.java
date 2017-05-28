@@ -1,9 +1,9 @@
 package com.nanita.cambosmart.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,9 +15,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.nanita.cambosmart.R;
+import com.nanita.cambosmart.fragments.AccountFragment;
+import com.nanita.cambosmart.fragments.ChangePasswordFragment;
+import com.nanita.cambosmart.fragments.HomeFragment;
+import com.nanita.cambosmart.fragments.LanguageFragment;
+import com.nanita.cambosmart.fragments.MyAdsFragment;
+import com.nanita.cambosmart.fragments.PostAdsFragment;
+import com.nanita.cambosmart.fragments.SaveAdsFragment;
+import com.nanita.cambosmart.fragments.SetMapFragment;
+import com.nanita.cambosmart.fragments.SettingFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,32 +94,50 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
+            HomeFragment homeFragment = new HomeFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,homeFragment,"Home Fragment").commit();
+
         } else if (id == R.id.nav_past_ads) {
-           Intent intent = new Intent(getApplicationContext(),PostAdsActivity.class);
-            startActivity(intent);
+            PostAdsFragment postAdsFragment = new PostAdsFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,postAdsFragment,"Post Ads Fragment").commit();
+
         } else if (id == R.id.nav_my_ads) {
-            Intent intent = new Intent(getApplicationContext(),MyAdsActivity.class);
-            startActivity(intent);
+            MyAdsFragment myAdsFragment = new MyAdsFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,myAdsFragment,"My Ads Fragment").commit();
+            
         } else if (id == R.id.nav_save_ads) {
-            Intent intent = new Intent(getApplicationContext(),SaveAdsActivity.class);
-            startActivity(intent);
+            SaveAdsFragment saveAdsFragment = new SaveAdsFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,saveAdsFragment,"Save Ads Fragment").commit();
+
         } else if (id == R.id.nav_account) {
-            Intent intent = new Intent(getApplicationContext(),AccountActivity.class);
-            startActivity(intent);
+            AccountFragment accountFragment = new AccountFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,accountFragment,"Account Fragment").commit();
+
         } else if (id == R.id.nav_set_map) {
-            Intent intent = new Intent(getApplicationContext(),SetMapActivity.class);
-            startActivity(intent);
+            SetMapFragment setMapFragment = new SetMapFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,setMapFragment,"SetMap Fragment").commit();
+
         }else if(id == R.id.nav_change_password){
-            Intent intent = new Intent(getApplicationContext(),ChangePasswordActivity.class);
-            startActivity(intent);
+            ChangePasswordFragment changePasswordFragment  = new ChangePasswordFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,changePasswordFragment,"ChangePassword Fragment").commit();
+
         }else if(id == R.id.nav_language){
-            Intent intent = new Intent(getApplicationContext(), LanguageActivity.class);
-            startActivity(intent);
+            LanguageFragment languageFragment = new LanguageFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,languageFragment,"Language Fragment").commit();
+
         }else if(id == R.id.nav_setting){
-            Intent intent  = new Intent(getApplicationContext(), SettingActivity.class);
-            startActivity(intent);
+            SettingFragment settingFragment = new SettingFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,settingFragment,"Setting Fragment").commit();
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
